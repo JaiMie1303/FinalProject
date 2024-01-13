@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sending</title>
+</head>
+<body>
+    <h1>New Articles from {{date|date:'d F'}}</h1>
+    <hr>
+    <ul class="container">
+        {% for item in posts %}
+        <li class="p-sm-3"><a href="{{link}}{{item.get_absolute_url}}">{{item.title}}</a></li>
+        {% endfor %}
+    </ul>
+    <p>You can unsubscribe from the mailing list in your personal account</p>
+</body>
+</html>

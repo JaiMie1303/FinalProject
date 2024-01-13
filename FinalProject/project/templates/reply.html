@@ -1,0 +1,16 @@
+{% extends 'flatpages/default.html' %}
+{% block title %}Reply{% endblock title %}
+{% block content %}
+    <div class="container text-center mt-5">
+        <h1 class="p-sm-1">Article reply</h1>
+        <h3 class="p-sm-1">"{{post.title}}" from Author: {{post.author}}</h3>
+        <hr>
+        <h5 class="p-sm-1">from user {{author.name}}</h5>
+        <hr>
+        <form action="{% url 'replied' post.id %}" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+        <input type="submit" value="Create"/>
+        </form>
+    </div>
+{% endblock content %}

@@ -1,0 +1,12 @@
+{% extends 'flatpages/default.html' %}
+{% block title %}Incorrect code{% endblock title %}
+{% block nav %}
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'post_list' %}">Main</a>
+        </div>
+    </nav>
+{% endblock nav %}
+{% block content %}
+<h3>Incoorect code, re-enter!</h3>
+{% endblock content %}

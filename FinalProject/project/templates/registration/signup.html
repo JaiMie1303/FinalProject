@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+</head>
+<body>
+    <form method="post" action="{% url 'signup' %}">
+    {% csrf_token %}
+    <p>{{ form.non_field_errors }}</p>
+    {{form.as_p}}
+    <p><input type="submit" value="Registration"></p>
+    </form>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{% extends 'flatpages/default.html' %}
+{% block title %}more details{% endblock title %}
+{% block content %}
+    <div class="container text-center mt-5">
+        <h1 class="p-sm-3">Reply № {{reply.pk}}</h1>
+        <p class="p-sm-1">to "{{reply.post}}"</p>
+        <hr>
+        <a class="navbar-toggler" href="{% url 'reply_delete' reply.pk %}">Reply remove</a>
+        {% if not reply.approved%}
+            <a class="navbar-toggler" href="{% url 'reply_approve' reply.pk %}">Accept</a>
+        {% endif %}
+        <hr>
+        <h4 class="p-sm-3">Author {{reply.author}}</h4>
+        <h5 class="p-sm-3">Created by {{reply.created}}</h5>
+        <p class="p-sm-1">{{reply.content}}</p>
+    </div>
+{% endblock content %}

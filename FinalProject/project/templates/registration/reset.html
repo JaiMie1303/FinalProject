@@ -1,0 +1,21 @@
+{% extends 'flatpages/default.html' %}
+{% block title %}Resetting the registration process{% endblock title %}
+{% block nav %}
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'post_list' %}">Main</a>
+        </div>
+    </nav>
+{% endblock nav %}
+{% block content %}
+<body>
+    <div class="container">
+    <form method="post" action="{% url 'reset' %}">
+        {% csrf_token %}
+        <p>Registration failed. A user with the same name may already exist.
+            If you unsuccessfully entered the code when verifying your registration, we recommend resetting your progress...</p>
+        <p><input type="submit" value="Reset"></p>
+    </form>
+    </div>
+</body>
+{% endblock content %}
